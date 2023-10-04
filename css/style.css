@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #181b21;
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.title {
+  background: linear-gradient(to right, #ffcf23, #ff8d3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+
+  width: 90vw;
+}
+.panel {
+  /* background-size: auto 100%; */
+  background-size: cover;
+  object-fit: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  position: relative;
+  margin: 10px;
+  transition: flex 0.7s ease-in, filter 0.5s ease-in-out;
+  filter: blur(1px) brightness(70%) grayscale(0.7);
+}
+.panel:nth-of-type(1) {
+  /* background-image: url("../images/image_01.jpg"); */
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      transparent,
+      rgba(11, 14, 19, 0.6)
+    ),
+    url("../images/image_01.jpg");
+}
+.panel:nth-of-type(2) {
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      transparent,
+      rgba(11, 14, 19, 0.6)
+    ),
+    url("../images/image_02.jpg");
+}
+.panel:nth-of-type(3) {
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      transparent,
+      rgba(11, 14, 19, 0.6)
+    ),
+    url("../images/image_03.jpg");
+}
+.panel:nth-of-type(4) {
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      transparent,
+      rgba(11, 14, 19, 0.6)
+    ),
+    url("../images/image_04.jpg");
+}
+.panel:nth-of-type(5) {
+  background-image: linear-gradient(
+      to bottom,
+      transparent,
+      transparent,
+      rgba(11, 14, 19, 0.5)
+    ),
+    url("../images/image_05.jpg");
+}
+
+.panel h3 {
+  font-size: 24px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+.panel.active {
+  /* border-radius: 0px; */
+  flex: 5;
+  filter: blur(0px) brightness(100%) grayscale(0);
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(1),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
